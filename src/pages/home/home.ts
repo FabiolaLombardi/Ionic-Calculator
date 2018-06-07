@@ -85,11 +85,14 @@ getLog(){
   }
 
   undo() {
+    if (this.regExp.test(this.val)){
     if (this.val != '') {
-      this.val = this.val.slice(0, -1)
+      this.val= this.val.substr(0, this.val.length - 1);
     }
-
+      //this.val = this.val.slice(0, -1)
+    }
   }
+  
 
   addN(num: string) {
     this.val += num;   
