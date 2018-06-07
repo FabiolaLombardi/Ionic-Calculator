@@ -4,7 +4,7 @@ page-home {
         margin-top: 8.5vh;
         
         ion-row {
-            height: 25%;
+            height: 35%;
         }
     }
     .button{
@@ -22,7 +22,8 @@ page-home {
         text-align: end;
         color:black;
         width: 100%;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        overflow: hidden;
 
     }
 

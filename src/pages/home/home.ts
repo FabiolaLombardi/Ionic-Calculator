@@ -12,23 +12,61 @@ export class HomePage {
   result: any;
   regExp: any;
   sign: string;
+  point: any;
   
 
   constructor(public navCtrl: NavController) {
     this.val = "";
     this.result = "";
     this.regExp = /([0-9]+(\+|\-|\*|\/|\%)?)+$/;
+    this.point=/(\.)$/;
   }
+
+getSin(){
+  this.val=Math.sin(this.val);
+  if(isNaN(this.val)){
+    this.val= "Math Error"
+  }
+}
+
+getCos(){
+  this.val=Math.cos(this.val);
+  if(isNaN(this.val)){
+    this.val= "Math Error"
+  }
+}
+
+getTan(){
+  this.val=Math.tan(this.val);
+  if(isNaN(this.val)){
+    this.val= "Math Error"
+  }
+}
+
+getLog(){
+  this.val=Math.log(this.val);
+  if(isNaN(this.val)){
+    this.val= "Math Error"
+  }
+}
+
   getRoot(){
     this.val= Math.sqrt(this.val);
+    if(isNaN(this.val)){
+      this.val= "Math Error"
+    }
   }
 
   getInverse(){
     this.val = 1/this.val;
+
   }
 
   getPow(){
     this.val= Math.pow(this.val,2);
+    if(isNaN(this.val)){
+      this.val= "Math Error"
+    }
   }
 
   clear() {
@@ -37,6 +75,9 @@ export class HomePage {
 
   getPercent() {
     this.val = this.val / 100;
+    if(isNaN(this.val)){
+      this.val= "Math Error"
+    }
   }
 
   changeS(){
@@ -49,11 +90,13 @@ export class HomePage {
     }
 
   }
+
   addN(num: string) {
-    this.val += num;
+    this.val += num;   
   }
 
   addS(ope: string) {
+
     this.val += ope;
     this.sign = ope;
   }
@@ -62,12 +105,6 @@ export class HomePage {
     try {
       if (this.regExp.test(this.val)) {
         this.result = eval(this.val);
-        if (this.result % 1 == 0) {
-        this.val = this.result;
-        }
-        else{
-          this.val = this.result.toFixed(5);
-        }
       } else {
         this.val = "Math Error";
       }

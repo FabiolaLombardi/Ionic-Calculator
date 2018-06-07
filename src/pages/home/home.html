@@ -3,22 +3,41 @@
     <ion-row>
            <div id="scope" style="border: solid 5px; border-color: rgb(201, 200, 200)">{{val}}</div>
     </ion-row>
+
     <ion-row>
-        <ion-col col-3>
-          <button ion-button color="primary" block (click)="getRoot();">√</button>
-        </ion-col>
-        <ion-col col-3>
-          <button ion-button color="primary" block (click)="getInverse();">1/x</button>
-        </ion-col>
-        <ion-col col-3>
-          <button ion-button color="primary" block (click)="getPow();">x²</button>
-        </ion-col >
-        <ion-col col-3 >
-          <button ion-button color="primary" block (click)="changeS('/');">+/-</button>
-        </ion-col>
+      <ion-col col-3>
+        <button ion-button color="primary" block (click)="getSin();">sin</button>
+      </ion-col>
+      <ion-col col-3>
+        <button ion-button color="primary" block (click)="getCos();">cos</button>
+      </ion-col>
+      <ion-col col-3>
+        <button ion-button color="primary" block (click)="getTan();">tan</button>
+      </ion-col >
+      <ion-col col-3 >
+        <button ion-button color="primary" block (click)="getLog();">log</button>
+      </ion-col>
+    
+    
+    </ion-row>
+  <ion-row>
+    <ion-col col-3>
+      <button ion-button color="primary" block (click)="getRoot();">√</button>
+    </ion-col>
+    <ion-col col-3>
+      <button ion-button color="primary" block (click)="getInverse();">1/x</button>
+    </ion-col>
+    <ion-col col-3>
+      <button ion-button color="primary" block (click)="getPow();">x²</button>
+    </ion-col >
+    <ion-col col-3 >
+      <button ion-button color="primary" block (click)="changeS();">+/-</button>
+    </ion-col>
 
 
-  </ion-row>
+</ion-row>
+
+
     <ion-row>
         <ion-col col-3>
           <button ion-button color="light" block (click)="clear();">AC</button>
@@ -95,7 +114,8 @@
       </ion-col>
  
     </ion-row>
-
+    
+  
 
   </ion-grid>
 </ion-content>
