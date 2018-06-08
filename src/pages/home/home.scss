@@ -4,18 +4,20 @@ page-home {
         margin-top: 8.5vh;
         
         ion-row {
-            height: 35%;
-        }
+            height: 65%;
+                }
     }
     .button{
-        height: 95%;
+        height: 110%;
+        width: 105%;
         font-size: 6vw;
         border-radius: 10px;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        color: black
+        color: black;
+        
     }
     .background {
-        background-color: rgb(230, 224, 224);
+        background-color: rgb(223, 219, 219);
     }
     @media (max-width: 1020px){
         #scope{
@@ -24,12 +26,11 @@ page-home {
     }
     @media (max-width: 768px){
         #scope{
-             font-size: 40px;
+             font-size: 50px;
         }
     }
     #scope {
-        font-size: 60px;
-        text-align: end;
+         text-align: end;
         color:black;
         width: 100%;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

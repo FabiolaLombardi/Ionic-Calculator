@@ -15,16 +15,13 @@ export class HomePage {
   sign: string;
   point: any;
   
-
   constructor(public navCtrl: NavController, private screenOrientation: ScreenOrientation) {
     this.val = "";
     this.result = "";
-    this.regExp = /([0-9]+(\+|\-|\*|\/|\%)?)+$/;
+    this.regExp = /([0-9]+(\+|\-|\*|\/|\.)?)+$/;
     this.point=/(\.)$/;
     this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
   }
-
-
 
 getSin(){
   this.val=Math.sin(this.val);
@@ -88,6 +85,9 @@ getLog(){
 
   changeS(){
     this.val= this.val * -1;
+    if(isNaN(this.val)){
+      this.val= "Math Error"
+    }
   }
 
   undo() {
@@ -102,10 +102,10 @@ getLog(){
 
   addN(num: string) {
     this.val += num;   
+    
   }
 
   addS(ope: string) {
-
     this.val += ope;
     this.sign = ope;
   }
@@ -114,6 +114,7 @@ getLog(){
     try {
       if (this.regExp.test(this.val)) {
         this.result = eval(this.val);
+        this.val=this.result;
       } else {
         this.val = "Math Error";
       }
