@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
 
 @Component({
   selector: 'page-home',
@@ -15,12 +16,15 @@ export class HomePage {
   point: any;
   
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private screenOrientation: ScreenOrientation) {
     this.val = "";
     this.result = "";
     this.regExp = /([0-9]+(\+|\-|\*|\/|\%)?)+$/;
     this.point=/(\.)$/;
+    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
   }
+
+
 
 getSin(){
   this.val=Math.sin(this.val);
@@ -59,7 +63,9 @@ getLog(){
 
   getInverse(){
     this.val = 1/this.val;
-
+    if(isNaN(this.val)){
+      this.val= "Math Error"
+    }
   }
 
   getPow(){
@@ -87,7 +93,7 @@ getLog(){
   undo() {
     if (this.regExp.test(this.val)){
     if (this.val != '') {
-      this.val= this.val.substr(0, this.val.length - 1);
+      this.val= this.val.toString().substr(0, this.val.length - 1);
     }
       //this.val = this.val.slice(0, -1)
     }
@@ -116,3 +122,4 @@ getLog(){
     }
   }
 }
+

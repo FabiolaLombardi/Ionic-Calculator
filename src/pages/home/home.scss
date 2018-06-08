@@ -17,6 +17,16 @@ page-home {
     .background {
         background-color: rgb(230, 224, 224);
     }
+    @media (max-width: 1020px){
+        #scope{
+            font-size: 60px;
+        }
+    }
+    @media (max-width: 768px){
+        #scope{
+             font-size: 40px;
+        }
+    }
     #scope {
         font-size: 60px;
         text-align: end;
@@ -24,7 +34,5 @@ page-home {
         width: 100%;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         overflow: hidden;
-
     }
-
 }
